@@ -4,7 +4,7 @@
 ## Identificação
 
 - Targeted application: vSphere Client
-- TType of vulnerability: RCE vulnerability due to lack of input validation in the Virtual SAN Health Check plug-in which is enabled by default in vCenter Server. 
+- Type of vulnerability: RCE vulnerability due to lack of input validation in the Virtual SAN Health Check plug-in which is enabled by default in vCenter Server. 
 - A malicious actor may exploit this issue to execute commands with unrestricted privileges on the operating system after gaining acess via an exploit.
 - 52 products affected, vulnerability widely spread globally as many organizations make use of this application, this can be confirmed with the map available on https://arstechnica.com/gadgets/2021/05/vulnerability-in-vmware-product-has-severity-rating-of-9-8-out-of-10/.
 
