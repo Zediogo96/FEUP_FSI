@@ -2,8 +2,8 @@
 Breve descrição do grupo
 
 * Turno: [LM]XX
-* Grupo: YY
+* Grupo: 07
 * Alunos:
-    - Aluno1 upZZZZZ 
-    - Aluno2 upZZZZZ
-    - Aluno3 upZZZZZ
+    - Afonso Jorge Farroco Martins up202005900
+    - Eduardo Filipe Leite da Silva up202005283
+    - José Diogo Pinto, up2020003529
