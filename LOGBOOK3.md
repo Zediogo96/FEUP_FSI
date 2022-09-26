@@ -31,4 +31,18 @@
 - The damage potential of this vulnerabilty is very high, which is reflected is its CVSS score.
 - Researcher Kevin Beaumont: “vCenter is a virtualization management software” ; “If you hack it, you control the virtualization layer (e.g., VMware ESXi)—which allows access before the OS layer (and security controls)."
 - Even though concrete attacks on large companies are not being reported widely in the news, they are occuring on samller companies that don´t patch their systems regularly - exploitation occuring in the wild.
-- The process of discovery and exploitation of the vulnerability has also been discussed widely on Twitter, even by users certified on cybersecurity: https://twitter.com/GossiTheDog/status/1400868390726733831. 
+- The process of discovery and exploitation of the vulnerability has also been discussed widely on Twitter, even by users certified on cybersecurity: https://twitter.com/GossiTheDog/status/1400868390726733831.
+
+## Sources
+
+-https://arstechnica.com/gadgets/2021/05/vulnerability-in-vmware-product-has-severity-rating-of-9-8-out-of-10/
+-https://cybersophia.net/vulnerability/vmware-patches-vulnerabilities-cve-2021-21985-cve-2021-21986/
+-https://www.rapid7.com/blog/post/2021/05/26/cve-2021-21985-vcenter-server-what-you-need-to-know/
+-https://twitter.com/GossiTheDog/status/1400868390726733831
+-https://testbnull.medium.com/a-quick-look-at-cve-2021-21985-vcenter-pre-auth-rce-9ecd459150a5
+-https://attackerkb.com/topics/X85GKjaVER/cve-2021-21985/rapid7-analysis?referrer=blog
+-https://cwe.mitre.org/data/definitions/20.html
+-https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-21985
+-https://nvd.nist.gov/vuln/detail/CVE-2021-21985#vulnCurrentDescriptionTitle
+-https://www.cvedetails.com/cve/CVE-2021-21985/
+-https://blogs.vmware.com/vsphere/2021/05/vmsa-2021-0010.html
