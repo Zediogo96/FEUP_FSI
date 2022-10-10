@@ -1,7 +1,7 @@
 
 Breve descrição do grupo
 
-* Turno: [LM]XX
+* Turno: L09
 * Grupo: 07
 * Alunos:
     - Afonso Jorge Farroco Martins up202005900
