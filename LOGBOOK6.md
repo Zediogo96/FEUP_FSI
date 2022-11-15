@@ -10,12 +10,12 @@
 ### Only in the 64th %x we can see the first four bytes of our input.
 ![task](/images/task3.png)
 ![task](/images/task4.png)
-## #4 - Stack Data
+## #4 - Heap Data
 ![task](/images/task6.png)
 ![task](/images/task5.png)
-## #5 - Heap Data
+## #5 - Change The Server's Program Memory
 ![task](/images/task8.png)
 ![task](/images/task7.png)
-## #6 - Stack Data
+## #6 - Change The Address To 0x500
 ![task](/images/task9.png)
 ![task](/images/task10.png)
