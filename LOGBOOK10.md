@@ -8,7 +8,7 @@ Setup the docker containers using the alias dcbuild and launch them using dcup.
 
 ## 3.1 Preparation: Getting Familiar with the "HTTP Header Live" tool
 
-In this preparatoty task we just follow the instructions given in the Guidelines section 5.1.
+In this preparatory task we just follow the instructions given in the Guidelines section 5.1.
 
 ## 3.2 Posting a malicious message to display an alert window
 
