@@ -8,13 +8,13 @@ Setup the docker containers using the alias dcbuild and launch them using dcup.
 
 ## 3.1 Preparation: Getting Familiar with the "HTTP Header Live" tool
 
-In this preparatoty task we just follow the instructions given in the Guidelines section 5.1.
+In this preparatory task we just follow the instructions given in the Guidelines section 5.1.
 
 ## 3.2 Posting a malicious message to display an alert window
 
 For this task, we chose to use the Samy profile. By pasting the suggested javascript code in the "brief description" field, as input is not sanitized, everytime any other user visits the profile, an alert pop-up will be displayed with the message "XSS". With this we can start to play around with the XSS attack and understand its foundations.
 
-Using the folloowing code in Samy's brief description field:
+Using the following code in Samy's brief description field:
 
 ![picture 1](images/3dcd07650562573d5b9f75ad1a2286438f2f57b09eaf6153d336c356df288f96.png)  
 
@@ -24,10 +24,10 @@ When acessing Samy's profile while logged in as Alice:
 
 ## 3.3 Posting a malicious message to display cookies
 
-By changing the argument of the alert window that we created with the javascript of the last task, we can display important information about the site, user, session, etc. In this case, we change the messagae 'XSS' to __document.cookie__, which will result in the display of the cookies of the document in the pop-up alert.
+By changing the argument of the alert window that we created with the javascript of the last task, we can display important information about the site, user, session, etc. In this case, we change the message 'XSS' to __document.cookie__, which will result in the display of the cookies of the document in the pop-up alert.
 However, only the user viewing the malicious profile will be prompted with this message.
 
-Using the folloowing code in Samy's brief description field:
+Using the following code in Samy's brief description field:
 
 ![picture 3](images/9a9b3724b39556760283093abc98468a6d3780293f8cd40bba05ef83883178a7.png)  
 
@@ -39,7 +39,7 @@ When acessing Samy's profile while logged in as Alice:
 
 In this task, we go a step further and make the cookies be sent to the attacker, instead of only being displayed to the user.  To achieve this, the malicious JavaScript code needs to send an HTTP request to the attacker, with the cookies appended to the request.
 
-Using the folloowing code in Samy's brief description field:
+Using the following code in Samy's brief description field:
 
 ![picture 5](images/eadb3a07dfe4655396ed2fdaaede269a12545eea46b5e9bf6b097f1d50c764b1.png)  
 
@@ -82,7 +82,7 @@ window.onload = function () {
 </script>
 ```
 
-When we place this code in Samy's about me field, and access his profile while logged in as Alice, we can see that Alice is added as a friend of Samy:
+When we place this code in Samy's about me field, and access his profile while logged in as Alice, we can see that Samy is added as a friend of Alice:
 
 ![picture 8](images/888f5500d41b79bc6119563608c3540f98ae361737d207d997ecb35ab44847d1.png)  
 ![picture 9](images/10b5469a11b2310b8dd5b8128daa70beb167388c3c9ffa664c3167bf68749586.png)  
