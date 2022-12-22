@@ -55,7 +55,60 @@ The flag returned by the script for this task is __flag{b06ffff8373413681100300a
 
 After reading the information regarding the CTF and doing some research, we came across a type of attack to the RSA encryption algorithm called __"Common Modulus"__. As the name suggests, this attack is based on the fact that the modulus of the two messages is the same, being the only difference the public exponent. According to Bezouts theorem, the greatest common divisor of two numbers is the product of their greatest common divisor and the least common multiple. In this case, the greatest common divisor is 1, and the least common multiple is the modulus n. This means that we can find the private exponent d by calculating the modular inverse of e modulo the least common multiple of the two public exponents.
 
-The website that we used to gather this information also provided a python script that does exactly the process described above, effectivelt exploiting the "vulnerability" that the CTF presents. The script, which we adapted to our needs, is the following:
+The website that we used to gather this information (https://infosecwriteups.com/rsa-attacks-common-modulus-7bdb34f331a5) also provided a python script that does exactly the process described above, effectivelt exploiting the "vulnerability" that the CTF presents. The script, which we adapted to our needs, is the following:
+
+```python
+import argparse
+import math
+from binascii import unhexlify
+
+def egcd(a, b):
+    if a == 0:
+        return b, 0, 1
+    else:
+        g, y, x = egcd(b % a, a)
+        return g, x - (b // a) * y, y
+
+
+def modinv(a, m):
+    return pow(a, -1, m)
+
+
+def attack(c1, c2, e1, e2, N):
+    if math.gcd(e1, e2) != 1:
+        raise ValueError("Exponents e1 and e2 must be coprime")
+    s1 = modinv(e1, e2)
+    s2 = (math.gcd(e1, e2) - e1 * s1) // e2
+    temp = modinv(c2, N)
+    m1 = pow(c1, s1, N)
+    m2 = pow(temp, -s2, N)
+    return (m1 * m2) % N
+
+
+def main():
+    args = parser.parse_args()
+    print('[+] Started attack...')
+    try:
+        message = attack(args.ct1, args.ct2, args.e1, args.e2, args.modulus)
+        print('[+] Attack finished!')
+        print('\nPlaintext message:\n%s' % unhexlify(hex(message)[2:])) 
+        # format(message, 'x').decode('hex'))
+    except Exception as e:
+        print('[+] Attack failed!')
+        print(e.message)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='RSA Common modulus attack')
+    required_named = parser.add_argument_group('required named arguments')
+    required_named.add_argument('-n', '--modulus', help='Common modulus', type=int, required=True)
+    required_named.add_argument('-e1', '--e1', help='First exponent', type=int, required=True)
+    required_named.add_argument('-e2', '--e2', help='Second exponent', type=int, required=True)
+    required_named.add_argument('-ct1', '--ct1', help='First ciphertext', type=int, required=True)
+    required_named.add_argument('-ct2', '--ct2', help='Second ciphertext', type=int, required=True)
+
+    main()
+```
 
 After connection to the server using netcat, and getting the information, we run the script with arguments -modulus -e1 -e2 -message1(converted from hex to decimal) -message2(converted from hex to decimal):
 
